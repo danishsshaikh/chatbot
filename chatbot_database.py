@@ -33,6 +33,8 @@ if __name__ == '__main__':
             comment_id = row['name']
             subreddit = row['subreddit']
 
+            parent_data = find_parent(parent_id)
+
 def find_parent(pid):
     try:
         sql = "SELECT comment FROM parent_reply WHERE comment_id = '{}' LIMIT 1".format(pid)
